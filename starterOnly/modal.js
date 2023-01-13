@@ -58,6 +58,10 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 }
+function launchInscription() {
+  closeModal();
+  modalvalidation.style.display = "block";
+}
 
 
 
@@ -149,17 +153,24 @@ function checkCondition() {
 
 // bouton submit (c'est parti)
 function validate(e) {
-//   if (!validePrenom() && !valideNom() && !valideEmail() && !valideDate() && !valideQuantite() && !valideVille() && !checkCondition()) {
-//     e.preventDefault();
+ 
    
-//   } else {
-//     //form is not valid, show error message
-//    modalvalidation.display.style="block";
-//   }
-// }
+    if (!validePrenom() && !valideNom() && !valideEmail() && !valideDate() && !valideQuantite() && !valideVille() && !checkCondition()) {
+      e.preventDefault(); 
+    
+    }
+    else 
+   
+    launchInscription();
+ 
+  }
+ 
 
-// modalvalidation.display.style="block";
+  
 
-}
+
+
+
+
 
 
