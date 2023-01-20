@@ -35,10 +35,10 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -69,7 +69,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -77,7 +79,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -90,16 +94,16 @@ img {
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -111,8 +115,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -158,7 +160,7 @@ main {
 }
 
 .bground,
-.validation{
+.validation {
   display: none;
   position: fixed;
   z-index: 1;
@@ -230,9 +232,9 @@ input {
 }
 
 input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
 }
 .checkbox-label,
 .checkbox2-label {
@@ -298,7 +300,8 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+.close,
+.close-validation {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -309,7 +312,9 @@ input[data-error]::after {
   transform: scale(0.7);
 }
 .close:before,
-.close:after {
+.close:after,
+.close-validation:before,
+.close-validation:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -317,15 +322,16 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+.close:before,
+.close-validation:before {
   transform: rotate(45deg);
 }
-.close:after {
+.close:after,
+.close-validation:after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup
- {
+.btn-signup {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -477,26 +483,32 @@ input[data-error]::after {
   display: none;
 }
 
-
-/* Validation  form */
-
-
+/* Validation inscription */
 .validation-body {
- 
   height: 700px;
 }
-.label-validation{
+.label-validation {
   display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 250px;
-  font-size: 2em;
+  font-size: 1em;
 }
-.btn-validation{
+.btn-validation {
   margin-top: 230px;
 }
-
-
+.btn-fermer-validation {
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
 
 footer {
   padding-left: 2vw;
@@ -551,4 +563,3 @@ footer {
     opacity: 1;
   }
 }
-
