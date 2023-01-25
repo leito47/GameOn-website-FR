@@ -16,6 +16,16 @@ const formData = document.querySelector(".formData");
 const modalClose = document.querySelector(".close");
 const closeCroixValidation = document.querySelector(".close-validation")
 const modalBtnFermerValidation = document.querySelector(".btn-fermer-validation");
+const firstNameInput = document.getElementById("first");
+const lastNameInput = document.getElementById("last");
+const emailInput = document.getElementById("email");
+const birthDateChoice = document.getElementById("birthdate");
+const quantityInput = document.getElementById("quantity");
+const radios = document.querySelectorAll(".villes");
+const conditionGenerale = document.getElementById("checkbox1");
+
+
+
 
 // DOML Elements Errors
 const firstnameError = document.querySelector(".firstname");
@@ -25,15 +35,6 @@ const dateDeNaissanceError = document.querySelector(".dateDeNaissance");
 const nbTournoiError = document.querySelector(".nbTournoiError");
 const radiosError =  document.querySelector(".radiosError");
 const conditionGeneraleError = document.querySelector(".conditionGeneraleError");
-
-
-const firstNameInput = document.getElementById("first");
-const lastNameInput = document.getElementById("last");
-const emailInput = document.getElementById("email");
-const birthDateChoice = document.getElementById("birthdate");
-const quantityInput = document.getElementById("quantity");
-const radios = document.querySelectorAll(".villes");
-const conditionGenerale = document.getElementById("checkbox1");
 
 
 
@@ -48,13 +49,14 @@ lastNameInput.addEventListener("input", valideNom);
 birthDateChoice.addEventListener("input", valideDate);
 quantityInput.addEventListener("input", valideQuantite);
 emailInput.addEventListener('input', valideEmail);
-conditionGenerale.addEventListener("input", cgu);
+conditionGenerale.addEventListener("click", cgu);
 submitBtn.addEventListener("click", validate);
 radios.forEach(radio => radio.addEventListener('input',valideVille));
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+
 }
 
 
@@ -66,6 +68,7 @@ function closeModal() {
 //fermer Inscription
 function closeInscription() {
   modalvalidation.style.display="none";
+   window.location.reload();
 
 }
 
@@ -182,11 +185,15 @@ function validate(e) {
    
     if (validePrenom() & valideNom() & valideEmail() & valideDate() & valideQuantite() & valideVille() & cgu()) {
       launchInscription(); 
- 
+  
+     
     }
+   
+      
 }
 
-  
+
+
 
 
 
